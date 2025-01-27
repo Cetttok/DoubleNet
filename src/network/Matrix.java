@@ -1,6 +1,6 @@
 package network;
 
-public class Matrix {
+public class Matrix{
 
 	private int _width;
 	private int _height;
@@ -77,7 +77,9 @@ public class Matrix {
 				return false;
 			}
 			else{
+				
 				_values[y][x] += value;
+				
 				return true;
 			}
 			
@@ -184,16 +186,23 @@ public class Matrix {
 					}
 				}
 			}
+
 			return result;
 		}
 		
 	}
+	@Override
+	public Matrix clone(){
+		return copy();
+	}
+	
 	public Matrix copy() {
 		Matrix result = new Matrix(_width, _height);
 		for (int y =0; y < _height; y++) {
 			for (int x = 0; x < _width; x++) {
 				try {
-					result.set(x,y, get(x,y));
+					double a = get(x,y);
+					result.set(x,y, a);
 				}
 				catch(MatrixOutOfRangeException ex) {
 					System.out.println("Matrix. copy() WTF!" + ex.getMessage());

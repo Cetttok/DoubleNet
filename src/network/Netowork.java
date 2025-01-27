@@ -11,30 +11,15 @@ public class Netowork {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		Matrix mat = new Matrix(4,4);
+		Tensor a = new Tensor(new TensorSize(3,3,3));
+		Tensor b = new Tensor(new TensorSize(3,3,3));
+		a.fill(1);
+		b.fill(2);
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println("a + 2b = ");
+		System.out.println(a.add(b).add(b));
 		
-		mat.fill(1);
-		for (int i = 0; i < 4; i++) {
-			for (int ii = 0; ii < 4; ii++) {
-				if (ii==i) {
-					
-					mat.set(ii, i,  1);
-					
-					
-					
-				}
-				
-			}
-		}
-		Vector doubles =new  Vector(new double[]{1,1,1,1}) ;
-		System.out.println(mat);
-		//ystem.out.println(doubleMat);
-		System.out.println("result:");
-		//System.out.println(mat.multiply(doubleMat));
-		//System.out.println(mat.add(doubleMat));
-		System.out.println(mat.multiply(mat.multiply(doubles)).multiply(doubles));
-		
-
 	}
 
 }
