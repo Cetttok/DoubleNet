@@ -1,2 +1,2 @@
 # DoubleNet
- Simple Framework for deeplearning
+ Simple Framework for deeplearning ( in develoop)
